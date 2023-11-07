@@ -47,9 +47,9 @@ const unObjeto = {
 
 - Primitivos:
 ```javascript
-let unaCadena = "Hola Mundo",
-  unNumero = 19,
-  unBoolean = true;
+let unaCadena = "Hola Mundo";
+let unNumero = 19;
+let unBoolean = true;
 ```
 - Funciones:
 ```javascript
