@@ -47,9 +47,9 @@ const unObjeto = {
 
 - Primitivos:
 ```javascript
-let unaCadena = "Hola Mundo",
-  unNumero = 19,
-  unBoolean = true;
+let unaCadena = "Hola Mundo";
+let unNumero = 19;
+let unBoolean = true;
 ```
 - Funciones:
 ```javascript
@@ -61,7 +61,7 @@ holaMundo("Jonathan");
 - Instancias:
 ```javascript
 const ajax = new XMLHttpRequest(),
-  jon = new SerHumano("Jonathan", "Hombre");
+  jon = new serHumano("Jonathan", "Hombre");
 ```
 
 
