@@ -128,3 +128,27 @@ console.log(ciudadesDisponibles);
 
   console.log(doubleEvenNumbers); // [8, 12]
 }
+
+
+
+/*DIFERENCIA ENTRE FOREACH Y MAP
+-forEach solo recorre elementos del arreglo y no retorna nada
+-Map reccorre elementos del arreglo Y retorna un nuevo arreglo MODIFICADO*/
+
+/* Uso del forEach */
+arreglo.forEach(function (element) {
+  console.log(element);
+}); //recorrido con forEach
+let lenguajes = ["ruby", "php", "c"];
+lenguajes.forEach(function (lenguaje, indice, arreglo) {
+  console.log(lenguaje, indice, arreglo);
+});
+
+/* Modificar arreglos con map */
+//genera un nuevo arreglo
+
+let numeros = [1, 2, 3, 5, 34];
+let cuadrados = numeros.map(function (numero) {
+  return numero * numero;
+});
+console.log(cuadrados);
