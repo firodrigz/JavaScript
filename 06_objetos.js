@@ -24,7 +24,7 @@ const usuario = {
   saludar: function () {
     console.log(`Hola :)`);
   },
-  decirMiNombre: function () {
+  decirMiNombre() {
     console.log(
       `Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad} años y me puedes seguir como ${this.contacto.twitter} en twitter.`
     );
@@ -48,8 +48,9 @@ console.log(usuario.contacto.twitter);
 usuario.saludar();
 usuario.decirMiNombre();
 
-console.log(Object.keys(usuario)); //Nos devuelve la cantidad de keys del usuario en un arreglo
-console.log(Object.values(usuario)); //Nos devuelve un arreglo con todos los valores
+console.log(Object.keys(usuario)); //Nos devuelve la cantidad de keys del usuario en un ARREGLO
+console.log(Object.values(usuario)); //Nos devuelve un ARREGLO con todos los valores
+console.log(Object.entries(usuario)); //Nos devuelve un ARREGLO DE ARREGLO con las keys y valores
 console.log(usuario.hasOwnProperty("nombre")); // Evaluamos si existe la key dentro del objeto o no - devuelve true o false
 console.log(usuario.hasOwnProperty("nacimiento"));
 
@@ -78,3 +79,18 @@ const { name: spideyName } = spiderman;
 
 console.log(spiderman["name"]); // Spidey
 console.log(spiderman.name); // Spidey
+
+//Operador de Encadenamiento Opcional
+const gamesystem = {
+  name: "PS5",
+  price: 550,
+  specs: {
+    cpu: "AMD Ryzen Zen 2",
+    gpu: "AMD Radeon RDNA 2",
+  },
+};
+
+console.log(gamesystem.specifications?.cpu);
+// -> undefined
+console.log(gamesystem.specs?.cpu);
+// -> AMD Ryzen Zen 2
