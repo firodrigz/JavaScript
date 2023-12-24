@@ -1,11 +1,11 @@
 //Trabajan junto a las promesas
 
 function cuadradoPromise(value) {
-  if (typeof value !== "number") {
-    return Promise.reject(`Error, el valor ${value} ingresado, no es un nro`);
-  }
-
   return new Promise((resolve, reject) => {
+    if (typeof value !== "number") {
+      reject(`Error, el valor ${value} ingresado, no es un nro`);
+    }
+
     setTimeout(() => {
       resolve({
         value,
@@ -13,8 +13,25 @@ function cuadradoPromise(value) {
       });
     }, 0 | (Math.random() * 1000));
   });
+  
 }
 
+async function obtenerResultados() {
+  try {
+    const resultado = await cuadradoPromise();
+    console.log(resultado);
+  } catch (error) {
+    console.log(error);
+  } //se pone un trycatch para que en el caso que exista un error al ejecutar la función cuadradoPromise, el error lanzado por reject sea capturado
+}
+
+obtenerResultados();
+
+//Top-Level await
+/*const resultado = await cuadradoPromise(6);
+console.log(resultado);*/
+
+/*
 async function funcionAsyncronaDeclarada() {
   try {
     console.log("Inicio Async Function");
@@ -58,3 +75,4 @@ const funcionAsyncronaExpresada = async () => {
 };
 
 funcionAsyncronaExpresada();
+*/
